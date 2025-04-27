@@ -11,7 +11,7 @@ import { Square } from "./square";
 export class Board implements OnInit {
     @Input() squares: string[] = ['', '', '', '', '', '', '', '', ''];
     @Output() onPlay = new EventEmitter();
-    public xIsNext: boolean = true;
+    @Input() xIsNext: boolean = true;
 
     // show status
     public status: string = '';
@@ -38,7 +38,6 @@ export class Board implements OnInit {
             nextSquares[i] = "O";
         }
         this.squares = nextSquares;
-        this.xIsNext = !this.xIsNext;
         this.showStatus();
         this.onPlay.emit(nextSquares);
         // this.squares[i] = "X";
