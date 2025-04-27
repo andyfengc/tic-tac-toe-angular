@@ -1,15 +1,15 @@
-<div className="board-row">
-    <square value="1"></square>
-    <square value="2"></square>
-    <square value="3"></square>
+<div class="board-row">
+    <square value="{{squares[0]}}" (onSquareClick)="handleClick(0)"></square>
+    <square value="{{squares[1]}}" (onSquareClick)="handleClick(1)"></square>
+    <square value="{{squares[2]}}" (onSquareClick)="handleClick(2)"></square>
 </div>
-<div className="board-row">
-    <square></square>
-    <square></square>
-    <square></square>
+<div class="board-row">
+    <square value="{{squares[3]}}" (onSquareClick)="handleClick(3)"></square>
+    <square value="{{squares[4]}}" (onSquareClick)="handleClick(4)"></square>
+    <square value="{{squares[5]}}" (onSquareClick)="handleClick(5)"></square>
 </div>
-<div className="board-row">
-    <square></square>
-    <square></square>
-    <square></square>
+<div class="board-row">
+    <square value="{{squares[6]}}" (onSquareClick)="handleClick(6)"></square>
+    <square value="{{squares[7]}}" (onSquareClick)="handleClick(7)"></square>
+    <square value="{{squares[8]}}" (onSquareClick)="handleClick(8)"></square>
 </div>

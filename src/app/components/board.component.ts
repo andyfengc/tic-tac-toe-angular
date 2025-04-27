@@ -9,5 +9,20 @@ import { Square } from "./square";
     styleUrl: '../app.component.css'
 })
 export class Board{
+    public squares : string[] = ['','','','','','','','',''];
+    public xIsNext : boolean = true;
 
+    public handleClick(i : number){
+        if (this.squares[i]) return;
+        const nextSquares = this.squares.slice();
+        if (this.xIsNext){
+            nextSquares[i] = "X";
+        }
+        else{
+            nextSquares[i] = "O";
+        }
+        this.squares = nextSquares;
+        this.xIsNext = !this.xIsNext;
+        // this.squares[i] = "X";
+    }
 }

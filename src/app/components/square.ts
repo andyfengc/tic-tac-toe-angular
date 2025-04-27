@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     standalone: true,
@@ -8,7 +8,8 @@ import { Component, Input } from "@angular/core";
 })
 export class Square{
     @Input() value : string = '';
-    public handleClick(){
-      console.log('clicked');
+    @Output() onSquareClick = new EventEmitter<any>();
+    public clickSquare(){
+      this.onSquareClick.emit();
     }
 }
