@@ -1,0 +1,17 @@
+<div className="game">
+    <div className="game-board">
+        <board [squares]="currentSquares" (onPlay)="handlePlay($event)"></board>
+    </div>
+    <!-- <div className="game-info" [innerHtml]="'<ol>'+moves.join('') + '</ol>' | safeHtml">        
+    </div> -->
+
+    <div>
+        <ol>
+            <li *ngFor="let squares of history; let move = index">
+                <button (click)="jumpTo(move)">
+                    {{ move > 0 ? 'Go to move #' + move: 'Go to game start' }}
+                </button>
+            </li>
+        </ol>
+    </div>
+</div>

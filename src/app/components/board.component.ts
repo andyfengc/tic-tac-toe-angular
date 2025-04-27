@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Square } from "./square";
 
 @Component({
@@ -9,7 +9,8 @@ import { Square } from "./square";
     styleUrl: '../app.component.css'
 })
 export class Board implements OnInit {
-    public squares: string[] = ['', '', '', '', '', '', '', '', ''];
+    @Input() squares: string[] = ['', '', '', '', '', '', '', '', ''];
+    @Output() onPlay = new EventEmitter();
     public xIsNext: boolean = true;
 
     // show status
@@ -39,6 +40,7 @@ export class Board implements OnInit {
         this.squares = nextSquares;
         this.xIsNext = !this.xIsNext;
         this.showStatus();
+        this.onPlay.emit(nextSquares);
         // this.squares[i] = "X";
     }
 
